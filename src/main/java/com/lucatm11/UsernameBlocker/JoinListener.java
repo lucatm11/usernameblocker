@@ -19,7 +19,7 @@ public class JoinListener implements Listener{
         plugin.getLogger().info("Checking " + playerName);
         for (String badWord : plugin.bwr.badWords) {
             if(playerName.contains(badWord)) {
-                plugin.getLogger().info(playerName + "flagged. (" + badWord + ")");
+                plugin.getLogger().info(playerName + " flagged. (" + badWord + ")");
                 event.disallow(Result.KICK_OTHER, Utils.colorize(plugin.getConfig().getString("messages.kick-message")));
                 break;
             }
