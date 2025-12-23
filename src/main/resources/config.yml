@@ -1,0 +1,8 @@
+badwords:
+  - fuck
+  - nigger
+  - idiot
+  - retard
+
+messages:
+  kick-message: "&cYour name doesn't comply with the server's rules!"
