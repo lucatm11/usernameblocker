@@ -22,6 +22,7 @@ public class JoinListener implements Listener{
             if(playerName.contains(badWord)) {
                 plugin.getLogger().info(playerName + "flagged. (" + badWord + ")");
                 player.kickPlayer(Utils.colorize(plugin.getConfig().getString("messages.kick-message")));
+                break;
             }
         }
     }
