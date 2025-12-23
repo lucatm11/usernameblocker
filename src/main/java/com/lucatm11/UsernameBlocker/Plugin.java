@@ -6,8 +6,7 @@ public class Plugin extends JavaPlugin
 {
   BadWordsRegistrar bwr;
 
-  public void onEnable()
-  {
+  public void onEnable() {
     saveDefaultConfig();
     bwr = new BadWordsRegistrar(this);
     bwr.init();
@@ -16,8 +15,7 @@ public class Plugin extends JavaPlugin
     getLogger().info("UsernameBlocker enabled.");
   }
 
-  public void onDisable()
-  {
+  public void onDisable() {
     getLogger().info("UsernameBlocker disabled.");
   }
 }

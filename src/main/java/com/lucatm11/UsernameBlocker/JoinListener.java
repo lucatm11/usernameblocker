@@ -6,7 +6,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class JoinListener implements Listener{
-
     private final Plugin plugin;
 
     public JoinListener(Plugin plugin) {
@@ -21,7 +20,7 @@ public class JoinListener implements Listener{
         plugin.getLogger().info("Checking " + playerName);
         for (String badWord : plugin.bwr.badWords) {
             if(playerName.contains(badWord)) {
-                plugin.getLogger().config(playerName + "flagged. (" + badWord + ")");
+                plugin.getLogger().info(playerName + "flagged. (" + badWord + ")");
                 player.kickPlayer(Utils.colorize(plugin.getConfig().getString("messages.kick-message")));
             }
         }

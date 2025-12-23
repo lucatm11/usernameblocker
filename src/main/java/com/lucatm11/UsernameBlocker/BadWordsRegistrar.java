@@ -3,7 +3,6 @@ package com.lucatm11.UsernameBlocker;
 import java.util.HashSet;
 
 public class BadWordsRegistrar {
-
     private final Plugin plugin;
     HashSet<String> badWords;
 
