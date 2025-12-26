@@ -5,7 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result;
 
-public class JoinListener implements Listener{
+public class JoinListener implements Listener {
     private final Plugin plugin;
 
     public JoinListener(Plugin plugin) {
@@ -16,10 +16,10 @@ public class JoinListener implements Listener{
     public void joinEvent(AsyncPlayerPreLoginEvent event) {
         String playerName = event.getName().toLowerCase();
 
-        plugin.getLogger().info("Checking " + playerName);
+        plugin.getLogger().info(String.format("Checking %s...", playerName));
         for (String badWord : plugin.badWords.badWordsSet) {
             if(playerName.contains(badWord)) {
-                plugin.getLogger().info(playerName + " flagged. (" + badWord + ")");
+                plugin.getLogger().info(String.format("%s flagged (%s).", playerName, badWord));
                 event.disallow(Result.KICK_OTHER, Utils.colorize(plugin.getConfig().getString("messages.kick-message")));
                 break;
             }

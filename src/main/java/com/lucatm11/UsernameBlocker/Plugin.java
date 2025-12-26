@@ -4,8 +4,7 @@ import java.util.HashSet;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Plugin extends JavaPlugin
-{
+public class Plugin extends JavaPlugin {
   public final BadWords badWords;
 
   public Plugin() {
@@ -19,8 +18,5 @@ public class Plugin extends JavaPlugin
     badWords.RegisterBadWordsFromConfig();
 
     getServer().getPluginManager().registerEvents(new JoinListener(this), this);
-  }
-
-  public void onDisable() {
   }
 }
