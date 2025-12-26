@@ -1,21 +1,26 @@
 package com.lucatm11.UsernameBlocker;
 
+import java.util.HashSet;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Plugin extends JavaPlugin
 {
-  BadWordsRegistrar bwr;
+  public final BadWords badWords;
+
+  public Plugin() {
+    badWords = new BadWords(this);
+  }
 
   public void onEnable() {
     saveDefaultConfig();
-    bwr = new BadWordsRegistrar(this);
-    bwr.init();
-    bwr.RegisterBadWordsFromConfig();
+
+    badWords.badWordsSet = new HashSet<String>();
+    badWords.RegisterBadWordsFromConfig();
+
     getServer().getPluginManager().registerEvents(new JoinListener(this), this);
-    getLogger().info("UsernameBlocker enabled.");
   }
 
   public void onDisable() {
-    getLogger().info("UsernameBlocker disabled.");
   }
 }
